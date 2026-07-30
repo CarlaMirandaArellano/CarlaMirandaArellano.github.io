@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carla Miranda Arellano — QA Automation</title>
+<meta name="description" content="Portafolio de Carla Miranda Arellano. QA Automation: Playwright, Postman, Selenium, Cypress. Proyectos de testing y desarrollo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Instrument+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F8F7;
+    --ink:#141F1C;
+    --ink-soft:#57635F;
+    --pass:#1B6E51;
+    --pending:#A66A15;
+    --rule:#DCE3E0;
+    --card:#FFFFFF;
+
+    --display:'Archivo',system-ui,sans-serif;
+    --body:'Instrument Sans',system-ui,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  html{scroll-behavior:smooth}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:820px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ---------- hero ---------- */
+
+  header{padding:88px 0 56px}
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:18px;
+  }
+
+  h1{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(2.4rem,6vw,3.6rem);
+    line-height:1.02;
+    letter-spacing:-.03em;
+    margin-bottom:10px;
+  }
+
+  .role{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:clamp(1.05rem,2.4vw,1.3rem);
+    color:var(--ink-soft);
+    letter-spacing:-.01em;
+    margin-bottom:44px;
+  }
+
+  /* ---------- test readout (signature) ---------- */
+
+  .readout{
+    font-family:var(--mono);
+    font-size:13.5px;
+    line-height:1.5;
+    background:var(--card);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:22px 20px;
+    margin-bottom:40px;
+    overflow-x:auto;
+  }
+
+  .readout-head{
+    color:var(--ink-soft);
+    font-size:11.5px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    padding-bottom:14px;
+    margin-bottom:16px;
+    border-bottom:1px solid var(--rule);
+  }
+
+  .line{
+    display:grid;
+    grid-template-columns:18px minmax(0,1fr);
+    gap:10px;
+    padding:3.5px 0;
+    opacity:0;
+    animation:resolve .32s ease-out forwards;
+  }
+
+  .line:nth-child(2){animation-delay:.14s}
+  .line:nth-child(3){animation-delay:.26s}
+  .line:nth-child(4){animation-delay:.38s}
+  .line:nth-child(5){animation-delay:.50s}
+  .line:nth-child(6){animation-delay:.62s}
+  .line:nth-child(7){animation-delay:.74s}
+  .line:nth-child(8){animation-delay:.86s}
+
+  @keyframes resolve{
+    from{opacity:0;transform:translateY(3px)}
+    to{opacity:1;transform:none}
+  }
+
+  .mark{font-weight:500}
+  .mark.ok{color:var(--pass)}
+  .mark.wip{color:var(--pending)}
+
+  .line-body{
+    display:flex;
+    flex-wrap:wrap;
+    gap:4px 14px;
+    align-items:baseline;
+  }
+
+  .key{font-weight:500;min-width:172px}
+  .val{color:var(--ink-soft)}
+
+  .readout-foot{
+    margin-top:16px;
+    padding-top:14px;
+    border-top:1px solid var(--rule);
+    color:var(--ink-soft);
+    font-size:12px;
+    opacity:0;
+    animation:resolve .32s ease-out .98s forwards;
+  }
+
+  .readout-foot b{color:var(--pass);font-weight:500}
+  .readout-foot i{color:var(--pending);font-style:normal;font-weight:500}
+
+  /* ---------- intro + links ---------- */
+
+  .intro{
+    font-size:17px;
+    max-width:62ch;
+    margin-bottom:28px;
+  }
+  .intro + .intro{margin-top:-14px}
+
+  .links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 10px;
+  }
+
+  .links a{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--ink);
+    text-decoration:none;
+    border:1px solid var(--rule);
+    background:var(--card);
+    border-radius:2px;
+    padding:7px 13px;
+    transition:border-color .15s, color .15s;
+  }
+
+  .links a:hover,.links a:focus-visible{
+    border-color:var(--pass);
+    color:var(--pass);
+  }
+
+  /* ---------- sections ---------- */
+
+  section{padding:52px 0;border-top:1px solid var(--rule)}
+
+  h2{
+    font-family:var(--mono);
+    font-size:11.5px;
+    font-weight:500;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:30px;
+  }
+
+  /* projects */
+
+  .project{
+    background:var(--card);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:26px 24px;
+    margin-bottom:16px;
+  }
+
+  .project h3{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:1.28rem;
+    letter-spacing:-.015em;
+    margin-bottom:6px;
+  }
+
+  .project .meta{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-bottom:16px;
+  }
+
+  .project p{max-width:66ch;margin-bottom:16px}
+
+  .shows{
+    border-left:2px solid var(--pass);
+    padding-left:14px;
+    font-size:15px;
+    color:var(--ink-soft);
+    max-width:64ch;
+    margin-bottom:18px;
+  }
+
+  .shows b{
+    color:var(--ink);
+    font-weight:500;
+    display:block;
+    font-size:12px;
+    font-family:var(--mono);
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin-bottom:5px;
+  }
+
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+
+  .tag{
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--ink-soft);
+    border:1px solid var(--rule);
+    border-radius:2px;
+    padding:3px 9px;
+  }
+
+  .repo{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--pass);
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+  }
+  .repo:hover,.repo:focus-visible{border-bottom-color:var(--pass)}
+
+  /* stack */
+
+  .stack-row{
+    display:grid;
+    grid-template-columns:150px minmax(0,1fr);
+    gap:16px;
+    padding:13px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  .stack-row:last-child{border-bottom:0}
+
+  .stack-row dt{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-soft);
+    letter-spacing:.05em;
+    padding-top:2px;
+  }
+  .stack-row dd{font-size:15px}
+
+  /* timeline */
+
+  .item{
+    display:grid;
+    grid-template-columns:126px minmax(0,1fr);
+    gap:16px;
+    padding:15px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  .item:last-child{border-bottom:0}
+
+  .item .when{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-soft);
+    padding-top:3px;
+  }
+
+  .item .what{font-weight:500;font-size:15.5px}
+  .item .where{color:var(--ink-soft);font-size:14.5px}
+
+  .status{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--pending);
+    letter-spacing:.06em;
+  }
+
+  footer{
+    padding:44px 0 72px;
+    border-top:1px solid var(--rule);
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+
+  a:focus-visible,.repo:focus-visible{
+    outline:2px solid var(--pass);
+    outline-offset:3px;
+  }
+
+  @media (max-width:560px){
+    header{padding:56px 0 40px}
+    .key{min-width:0;width:100%}
+    .stack-row,.item{grid-template-columns:1fr;gap:5px}
+    .readout{font-size:12.5px;padding:18px 15px}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .line,.readout-foot{animation:none;opacity:1}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Santiago, Chile</p>
+    <h1>Carla Miranda<br>Arellano</h1>
+    <p class="role">QA Automation</p>
+
+    <div class="readout" aria-label="Resumen de capacidades">
+      <div class="readout-head">capacidades verificadas</div>
+
+      <div class="line"><span class="mark ok">✓</span><span class="line-body"><span class="key">playwright</span><span class="val">automatización de pruebas de frontend</span></span></div>
+      <div class="line"><span class="mark ok">✓</span><span class="line-body"><span class="key">postman</span><span class="val">validación de endpoints de API</span></span></div>
+      <div class="line"><span class="mark ok">✓</span><span class="line-body"><span class="key">selenium · cypress</span><span class="val">automatización, gherkin y cucumber</span></span></div>
+      <div class="line"><span class="mark ok">✓</span><span class="line-body"><span class="key">pl/sql · oracle</span><span class="val">integridad transaccional, commit y rollback</span></span></div>
+      <div class="line"><span class="mark ok">✓</span><span class="line-body"><span class="key">sql · postgresql</span><span class="val">consultas y validación de datos</span></span></div>
+      <div class="line"><span class="mark ok">✓</span><span class="line-body"><span class="key">inglés</span><span class="val">C1 — documentación técnica a diario</span></span></div>
+      <div class="line"><span class="mark wip">◐</span><span class="line-body"><span class="key">java · spring</span><span class="val">en curso — programa full stack</span></span></div>
+
+      <div class="readout-foot"><b>6 verificadas</b> · <i>1 en curso</i></div>
+    </div>
+
+    <p class="intro">Hago aseguramiento de calidad de software. Trabajé automatización de pruebas en una pasantía en Globant —Playwright sobre frontend, Postman sobre endpoints— y tengo formación específica en QA Automation.</p>
+
+    <p class="intro">Estudio Ingeniería en Desarrollo de Software, así que leo el código que pruebo. Eso cambia el tipo de prueba que se me ocurre escribir.</p>
+
+    <nav class="links">
+      <a href="mailto:carla.miranda.arellano@gmail.com">correo</a>
+      <a href="https://github.com/CarlaMirandaArellano" target="_blank" rel="noopener">github</a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">linkedin</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Proyectos</h2>
+
+    <article class="project">
+      <h3>Proceso batch con control de integridad</h3>
+      <p class="meta">PL/SQL · Oracle · 2026</p>
+      <p>Proceso masivo que recorre la base de clientes calculando puntajes según reglas de negocio, y genera registros derivados en una tabla de detalle.</p>
+      <div class="shows">
+        <b>Lo que resuelve</b>
+        El proceso solo confirma la transacción si el contador de iteraciones coincide con el total de registros esperado. Si no coinciden, hace rollback completo. La idea de fondo: una tabla vacía es preferible a una tabla con datos parciales, porque los datos parciales parecen completos y nadie los cuestiona.
+      </div>
+      <div class="tags"><span class="tag">PL/SQL</span><span class="tag">Oracle</span><span class="tag">Transacciones</span><span class="tag">Integridad de datos</span></div>
+    </article>
+
+    <article class="project">
+      <h3>Librería — aplicación full-stack</h3>
+      <p class="meta">.NET · Angular · SQL Server · Docker · 2025</p>
+      <p>API REST que consume la API pública de Open Library y persiste favoritos en SQL Server sobre Docker, con frontend en Angular.</p>
+      <div class="shows">
+        <b>Lo que resuelve</b>
+        Restricción de unicidad a nivel de base de datos, no solo por código: la validación en la aplicación se puede saltar, la de la base no. Incluye pruebas unitarias sobre la capa de servicios.
+      </div>
+      <div class="tags"><span class="tag">.NET</span><span class="tag">Angular</span><span class="tag">SQL Server</span><span class="tag">Docker</span><span class="tag">API REST</span><span class="tag">Tests unitarios</span></div>
+      <a class="repo" href="https://github.com/CarlaMirandaArellano/Libreria-Project" target="_blank" rel="noopener">ver repositorio →</a>
+    </article>
+  </section>
+
+  <section>
+    <h2>Stack</h2>
+    <dl>
+      <div class="stack-row"><dt>testing</dt><dd>Playwright · Selenium · Cypress · Postman · WebDriver · Gherkin · Cucumber · TDD</dd></div>
+      <div class="stack-row"><dt>lenguajes</dt><dd>JavaScript · Java · SQL · PL/SQL · C#</dd></div>
+      <div class="stack-row"><dt>bases de datos</dt><dd>PostgreSQL · SQL Server · Oracle</dd></div>
+      <div class="stack-row"><dt>desarrollo</dt><dd>React · Node.js · Express · API REST · HTML · CSS</dd></div>
+      <div class="stack-row"><dt>herramientas</dt><dd>Git · GitHub · Docker · Jira · Trello · Metodologías ágiles</dd></div>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Trayectoria</h2>
+
+    <div class="item">
+      <div class="when">2025 · 3 meses</div>
+      <div>
+        <div class="what">QA Automation Engineer — pasantía</div>
+        <div class="where">Globant Chile</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="when">2021 – 2025</div>
+      <div>
+        <div class="what">Desarrolladora y gestora de e-commerce</div>
+        <div class="where">Enkarga Music</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="when">2017 – 2019</div>
+      <div>
+        <div class="what">Administradora de recursos de geología</div>
+        <div class="where">SAM — proyecto minero</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Formación</h2>
+
+    <div class="item">
+      <div class="when"><span class="status">en curso</span></div>
+      <div>
+        <div class="what">Ingeniería en Desarrollo de Software</div>
+        <div class="where">Duoc UC — segundo año</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="when"><span class="status">en curso</span></div>
+      <div>
+        <div class="what">Full Stack Java</div>
+        <div class="where">Alkemy</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="when">2025</div>
+      <div>
+        <div class="what">Testing QA Automation</div>
+        <div class="where">Desafío Latam</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="when">2024 – 2025</div>
+      <div>
+        <div class="what">Full Stack Developer</div>
+        <div class="where">Desafío Latam</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="when">2013 – 2016</div>
+      <div>
+        <div class="what">Audio Production · Audio Engineering</div>
+        <div class="where">SAE Institute, Madrid</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Carla Miranda Arellano — Santiago, Chile
+  </footer>
+
+</div>
+
+</body>
+</html>
