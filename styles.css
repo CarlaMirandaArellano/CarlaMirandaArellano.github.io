@@ -45,7 +45,7 @@
       border-bottom: 1px solid var(--border);
     }
     .nav-name {
-      font-family: 'Instrument Serif', serif;
+   
       font-size: 1rem;
       color: var(--accent);
     }
@@ -93,7 +93,7 @@
       box-shadow: 0 0 8px var(--accent);
     }
     .hero h1 {
-      font-family: 'Instrument Serif', serif;
+     
       font-size: clamp(2.6rem, 6vw, 3.8rem);
       line-height: 1.08;
       color: var(--text);
@@ -285,7 +285,7 @@
     .project-card:hover { border-color: var(--accent-dim); }
     .project-meta { font-size: 0.72rem; color: var(--text-muted); margin-bottom: 0.6rem; font-weight: 500; }
     .project-card h3 {
-      font-family: 'Instrument Serif', serif; font-size: 1.2rem;
+       font-size: 1.2rem;
       color: var(--text); margin-bottom: 0.75rem;
     }
     .project-card p { font-size: 0.875rem; color: var(--text-soft); line-height: 1.75; margin-bottom: 1rem; }
@@ -318,6 +318,7 @@
     .stack-item {
       font-size: 0.75rem; color: var(--text-soft); padding: 0.2rem 0.55rem;
       background: var(--bg2); border: 1px solid var(--border2); border-radius: 4px;
+      color: #3ddc84;
     }
 
     /* TRAYECTORIA */
