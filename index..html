@@ -72,10 +72,10 @@
 
     /* ── LAYOUT ── */
     .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 3rem;
-}
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
 
     /* ── HERO ── */
     .hero {
@@ -157,10 +157,14 @@
     .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
     /* foto */
-    .hero-photo { flex-shrink: 0; }
+    .hero-photo {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
     .photo-frame {
-      transform: none;
-transition: width 0.4s ease, height 0.4s ease, border-radius 0.4s ease;
       width: 280px;
       height: 280px;
       border-radius: 50%;
@@ -172,22 +176,101 @@ transition: width 0.4s ease, height 0.4s ease, border-radius 0.4s ease;
       align-items: center;
       justify-content: center;
       font-size: 4rem;
-    }
-    .photo-frame img {
-      transition: transform 0.4s ease, filter 0.4s ease;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center 30%;
+      transition: width 0.4s ease, height 0.4s ease, border-radius 0.4s ease;
+      cursor: pointer;
     }
     .photo-frame:hover {
-  width: 450px;
-  height: 300px;
-  border-radius: 16px;
-  margin-left: 0;
-  transform-origin: left center;
-  filter: brightness(1.1) saturate(1.2) hue-rotate(10deg);
-  animation: parpadeo 1s ease-in-out infinite;
-}
+      width: 420px;
+      height: 280px;
+      border-radius: 16px;
+      animation: parpadeo 1s ease-in-out infinite;
+    }
+    .photo-frame img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      transition: filter 0.4s ease;
+    }
+    .photo-frame:hover img {
+      filter: brightness(1.1) saturate(1.2);
+    }
+    @keyframes parpadeo {
+      0%, 100% { box-shadow: 0 0 0 4px var(--surface), 0 0 0 5px var(--border2), 0 0 15px rgba(91,192,222,0.2); }
+      50%       { box-shadow: 0 0 0 4px var(--surface), 0 0 0 5px var(--accent), 0 0 30px rgba(91,192,222,0.7); }
+    }
+
+    /* ── TERMINAL ── */
+    .terminal {
+      width: 420px;
+      background: #060d10;
+      border: 1px solid var(--border2);
+      border-radius: 10px;
+      overflow: hidden;
+      font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+      font-size: 0.72rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+    .terminal-bar {
+      background: var(--surface2);
+      padding: 0.5rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .terminal-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .terminal-dot.red    { background: #ff5f57; }
+    .terminal-dot.yellow { background: #ffbd2e; }
+    .terminal-dot.green  { background: #28c840; }
+    .terminal-title {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      margin: 0 auto;
+      letter-spacing: 0.03em;
+    }
+    .terminal-body {
+      padding: 0.85rem 1rem;
+      height: 180px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .t-line {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .t-line.visible { opacity: 1; transform: translateY(0); }
+    .t-pass  { color: #3ddc84; }
+    .t-fail  { color: #ff6b6b; }
+    .t-info  { color: var(--text-muted); }
+    .t-name  { color: var(--text-soft); }
+    .t-time  { color: #2a4a58; margin-left: auto; }
+    .t-cursor {
+      display: inline-block;
+      width: 7px; height: 13px;
+      background: var(--accent);
+      animation: blink 1s step-end infinite;
+      vertical-align: middle;
+      border-radius: 1px;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    .terminal-footer {
+      padding: 0.5rem 1rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 1.5rem;
+    }
+    .tf-stat { font-size: 0.68rem; display: flex; align-items: center; gap: 0.35rem; }
+    .tf-stat span:first-child { color: var(--text-muted); }
+    .tf-pass  { color: #3ddc84; font-weight: 600; }
+    .tf-fail  { color: #ff6b6b; font-weight: 600; }
+    .tf-total { color: var(--text-soft); font-weight: 600; }
 
     /* ── SECCIÓN ── */
     .section {
@@ -402,12 +485,6 @@ transition: width 0.4s ease, height 0.4s ease, border-radius 0.4s ease;
     footer a:hover { text-decoration: underline; }
 
     /* ── RESPONSIVE ── */
-
-    @keyframes parpadeo {
-  0%, 100% { box-shadow: 0 0 0 4px var(--surface), 0 0 0 5px var(--border2), 0 0 15px rgba(91,192,222,0.2); }
-  50%       { box-shadow: 0 0 0 4px var(--surface), 0 0 0 5px var(--accent), 0 0 30px rgba(91,192,222,0.7); }
-}
-
     @media (max-width: 680px) {
       nav { padding: 0.85rem 1.25rem; }
       .nav-links { display: none; }
@@ -462,11 +539,97 @@ transition: width 0.4s ease, height 0.4s ease, border-radius 0.4s ease;
     </div>
     <div class="hero-photo">
       <div class="photo-frame">
-      
-          <img src="FotoGitPage.jpeg" alt="Carla Miranda Arellano" />
+        <img src="FotoGitPage.jpeg" alt="Carla Miranda Arellano" />
+      </div>
+
+      <!-- TERMINAL ANIMADA -->
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="terminal-dot red"></span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
+          <span class="terminal-title">playwright test</span>
+        </div>
+        <div class="terminal-body" id="termBody"></div>
+        <div class="terminal-footer">
+          <div class="tf-stat"><span>passed</span><span class="tf-pass" id="tfPass">0</span></div>
+          <div class="tf-stat"><span>failed</span><span class="tf-fail" id="tfFail">0</span></div>
+          <div class="tf-stat"><span>total</span><span class="tf-total" id="tfTotal">0</span></div>
+        </div>
       </div>
     </div>
   </div>
+
+  <script>
+    const tests = [
+      { name: 'login › should display login form',         pass: true,  ms: 312  },
+      { name: 'login › should reject invalid credentials', pass: true,  ms: 289  },
+      { name: 'login › should redirect after login',       pass: false, ms: 1043 },
+      { name: 'nav › should highlight active link',        pass: true,  ms: 98   },
+      { name: 'nav › should collapse on mobile',          pass: true,  ms: 143  },
+      { name: 'api › GET /users returns 200',              pass: true,  ms: 54   },
+      { name: 'api › POST /login validates body',          pass: true,  ms: 61   },
+      { name: 'api › DELETE /user requires auth',          pass: false, ms: 720  },
+      { name: 'checkout › cart totals are correct',        pass: true,  ms: 204  },
+      { name: 'checkout › payment form submits',           pass: true,  ms: 388  },
+    ];
+
+    const body    = document.getElementById('termBody');
+    const tfPass  = document.getElementById('tfPass');
+    const tfFail  = document.getElementById('tfFail');
+    const tfTotal = document.getElementById('tfTotal');
+    const MAX_LINES = 7;
+
+    let passed = 0, failed = 0, idx = 0;
+
+    function addLine(html) {
+      const el = document.createElement('div');
+      el.className = 't-line';
+      el.innerHTML = html;
+      body.appendChild(el);
+      requestAnimationFrame(() => el.classList.add('visible'));
+      // mantener solo MAX_LINES visibles
+      const lines = body.querySelectorAll('.t-line');
+      if (lines.length > MAX_LINES) {
+        lines[0].style.transition = 'none';
+        lines[0].remove();
+      }
+    }
+
+    function runNext() {
+      if (idx >= tests.length) {
+        // reiniciar después de pausa
+        setTimeout(() => {
+          body.innerHTML = '';
+          passed = 0; failed = 0; idx = 0;
+          tfPass.textContent = '0';
+          tfFail.textContent = '0';
+          tfTotal.textContent = '0';
+          addLine('<span class="t-info">$ npx playwright test</span>');
+          setTimeout(runNext, 800);
+        }, 3000);
+        return;
+      }
+
+      const t = tests[idx++];
+      const icon  = t.pass ? '<span class="t-pass">✓</span>' : '<span class="t-fail">✗</span>';
+      const cls   = t.pass ? 't-pass' : 't-fail';
+      const label = t.pass ? 'PASS' : 'FAIL';
+      addLine(`${icon} <span class="t-name">${t.name}</span><span class="t-time">${t.ms}ms</span>`);
+
+      if (t.pass) passed++; else failed++;
+      tfPass.textContent  = passed;
+      tfFail.textContent  = failed;
+      tfTotal.textContent = idx;
+
+      const delay = t.pass ? 350 + Math.random() * 250 : 900 + Math.random() * 300;
+      setTimeout(runNext, delay);
+    }
+
+    // arrancar
+    addLine('<span class="t-info">$ npx playwright test</span>');
+    setTimeout(runNext, 800);
+  </script>
 
   <!-- CAPACIDADES -->
   <section class="section" id="capacidades">
