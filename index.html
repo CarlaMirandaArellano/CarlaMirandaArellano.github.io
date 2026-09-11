@@ -28,14 +28,14 @@
     <div class="hero-text">
       <p class="hero-location">Santiago, Chile</p>
       <h1>Carla Miranda<br><em>Arellano</em></h1>
-      <p class="hero-role">QA Automation · Ingeniería en Desarrollo de Software</p>
+      <p class="hero-role">QA Automation Engineer</p>
       <p class="hero-bio">
-        Hago aseguramiento de calidad de software. Trabajé automatización de pruebas en Globant —Playwright sobre frontend, Postman sobre endpoints— y tengo formación específica en QA Automation. Estudio Ingeniería en Desarrollo de Software, así que leo el código que pruebo. Eso cambia el tipo de prueba que se me ocurre escribir.
+        QA con formación específica en testing automatizado y experiencia práctica en automatización de pruebas de interfaz y validación de servicios en entorno corporativo. Estudio Ingeniería en Desarrollo de Software, lo que me permite leer y entender el código que pruebo, no solo ejecutar casos de prueba. Inglés C1, que utilizo a diario para documentación técnica.
       </p>
       <div class="hero-links">
         <a href="mailto:carla.miranda.arellano@gmail.com" class="btn btn-primary">Escribeme</a>
         <a href="https://github.com/CarlaMirandaArellano" class="btn btn-ghost" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/" class="btn btn-ghost" target="_blank">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/carlamirandaarellano" class="btn btn-ghost" target="_blank">LinkedIn</a>
       </div>
     </div>
 
@@ -65,18 +65,23 @@
     <p class="section-label">Capacidades verificadas</p>
     <div class="skills-list">
       <div class="skill-row">
+        <span class="skill-name">Selenium WebDriver</span>
+        <span class="skill-desc">Automatización E2E con Java, BDD y TDD</span>
+        <span class="skill-status verified">Verificado</span>
+      </div>
+      <div class="skill-row">
         <span class="skill-name">Playwright</span>
         <span class="skill-desc">Automatización de pruebas de frontend</span>
         <span class="skill-status verified">Verificado</span>
       </div>
       <div class="skill-row">
-        <span class="skill-name">Postman</span>
-        <span class="skill-desc">Validación de endpoints de API</span>
+        <span class="skill-name">Cypress · TestNG</span>
+        <span class="skill-desc">Automatización, Gherkin y Cucumber</span>
         <span class="skill-status verified">Verificado</span>
       </div>
       <div class="skill-row">
-        <span class="skill-name">Selenium · Cypress</span>
-        <span class="skill-desc">Automatización, Gherkin y Cucumber</span>
+        <span class="skill-name">Postman</span>
+        <span class="skill-desc">Validación de endpoints de API</span>
         <span class="skill-status verified">Verificado</span>
       </div>
       <div class="skill-row">
@@ -106,12 +111,33 @@
   <section class="section" id="proyectos">
     <p class="section-label">Proyectos</p>
     <div class="projects-list">
+
+      <div class="project-card">
+        <p class="project-meta">Java 17 · Selenium WebDriver 4 · TestNG · Cucumber · Maven · 2026</p>
+        <h3>SauceDemo — Suite de pruebas E2E</h3>
+        <p>Suite end-to-end sobre la aplicación de e-commerce de Sauce Labs. Dos capas de pruebas sobre los mismos Page Objects: TestNG directo para pruebas técnicas y Cucumber con Gherkin para escenarios legibles por negocio. Cobertura de login, carrito y checkout, incluyendo casos negativos y validación de campos.</p>
+        <div class="project-insight">
+          Esperas explícitas con WebDriverWait en lugar de Thread.sleep, pruebas independientes con navegador nuevo por cada caso, capturas automáticas ante fallo adjuntas al reporte, y casos parametrizados con @DataProvider para no duplicar lógica.
+        </div>
+        <div class="tags">
+          <span class="tag">Selenium WebDriver</span>
+          <span class="tag">Java 17</span>
+          <span class="tag">TestNG</span>
+          <span class="tag">Cucumber</span>
+          <span class="tag">Gherkin</span>
+          <span class="tag">BDD</span>
+          <span class="tag">Page Object Model</span>
+          <span class="tag">Maven</span>
+        </div>
+        <a href="https://github.com/CarlaMirandaArellano/saucedemo-tests-java" class="project-link" target="_blank">Ver repositorio →</a>
+      </div>
+
       <div class="project-card">
         <p class="project-meta">PL/SQL · Oracle · 2026</p>
         <h3>Proceso batch con control de integridad</h3>
-        <p>Proceso masivo que recorre la base de clientes calculando puntajes según reglas de negocio, generando registros derivados en una tabla de detalle.</p>
+        <p>Proceso masivo de categorización de clientes con cálculo de puntajes según reglas de negocio, generando registros derivados en una tabla de detalle.</p>
         <div class="project-insight">
-          El proceso solo confirma la transacción si el contador de iteraciones coincide con el total de registros esperado. Si no coinciden, hace rollback completo. Una tabla vacía es preferible a datos parciales que nadie cuestiona.
+          COMMIT condicionado a que el contador de iteraciones coincida con el total de registros. ROLLBACK en caso contrario para evitar cargas parciales. Una tabla vacía es preferible a datos parciales que nadie cuestiona.
         </div>
         <div class="tags">
           <span class="tag">PL/SQL</span>
@@ -120,10 +146,11 @@
           <span class="tag">Integridad de datos</span>
         </div>
       </div>
+
       <div class="project-card">
         <p class="project-meta">.NET · Angular · SQL Server · Docker · 2025</p>
         <h3>Librería — aplicación full-stack</h3>
-        <p>API REST que consume la API pública de Open Library y persiste favoritos en SQL Server sobre Docker, con frontend en Angular.</p>
+        <p>API REST en .NET con frontend en Angular, consumiendo la API pública de Open Library y persistiendo favoritos en SQL Server sobre Docker.</p>
         <div class="project-insight">
           Restricción de unicidad a nivel de base de datos, no solo por código. La validación en la aplicación se puede saltar; la de la base, no. Incluye pruebas unitarias sobre la capa de servicios.
         </div>
@@ -137,6 +164,7 @@
         </div>
         <a href="https://github.com/CarlaMirandaArellano/Libreria-Project" class="project-link" target="_blank">Ver repositorio →</a>
       </div>
+
     </div>
   </section>
 
@@ -147,21 +175,21 @@
       <div class="stack-group">
         <h4>Testing</h4>
         <div class="stack-items">
+          <span class="stack-item">Selenium WebDriver</span>
           <span class="stack-item">Playwright</span>
-          <span class="stack-item">Selenium</span>
           <span class="stack-item">Cypress</span>
           <span class="stack-item">Postman</span>
-          <span class="stack-item">WebDriver</span>
+          <span class="stack-item">TestNG</span>
           <span class="stack-item">Gherkin</span>
           <span class="stack-item">Cucumber</span>
-          <span class="stack-item">TDD</span>
+          <span class="stack-item">BDD · TDD</span>
         </div>
       </div>
       <div class="stack-group">
         <h4>Lenguajes</h4>
         <div class="stack-items">
-          <span class="stack-item">JavaScript</span>
           <span class="stack-item">Java</span>
+          <span class="stack-item">JavaScript</span>
           <span class="stack-item">SQL</span>
           <span class="stack-item">PL/SQL</span>
           <span class="stack-item">C#</span>
@@ -183,6 +211,7 @@
           <span class="stack-item">Node.js</span>
           <span class="stack-item">Express</span>
           <span class="stack-item">API REST</span>
+          <span class="stack-item">Bootstrap</span>
           <span class="stack-item">HTML · CSS</span>
         </div>
       </div>
@@ -191,6 +220,7 @@
         <div class="stack-items">
           <span class="stack-item">Git</span>
           <span class="stack-item">GitHub</span>
+          <span class="stack-item">Maven</span>
           <span class="stack-item">Docker</span>
           <span class="stack-item">Jira</span>
           <span class="stack-item">Trello</span>
@@ -208,21 +238,51 @@
         <span class="tl-date">2025 · 3 meses</span>
         <div class="tl-content">
           <strong>QA Automation Engineer — pasantía</strong>
-          <span>Globant Chile</span>
+          <span>Globant Chile · Santiago</span>
+          <ul class="tl-bullets">
+            <li>Automatización E2E con Selenium WebDriver + Java, Gherkin/Cucumber bajo BDD y TDD</li>
+            <li>Pruebas de frontend con Playwright y validación de API con Postman</li>
+            <li>Participación en proyecto TDD con web scraping e integración de modelo con IA</li>
+          </ul>
         </div>
       </div>
       <div class="tl-item">
         <span class="tl-date">2021 – 2025</span>
         <div class="tl-content">
           <strong>Desarrolladora y gestora de e-commerce</strong>
-          <span>Enkarga Music</span>
+          <span>Enkarga Music · Santiago</span>
+          <ul class="tl-bullets">
+            <li>Desarrollo y administración de tienda online en WordPress</li>
+            <li>Operación integral: catálogo, pagos, contenido, incidencias y atención a clientes</li>
+          </ul>
         </div>
       </div>
       <div class="tl-item">
         <span class="tl-date">2017 – 2019</span>
         <div class="tl-content">
           <strong>Administradora de recursos de geología</strong>
-          <span>SAM — proyecto minero</span>
+          <span>SAM · Santiago</span>
+          <ul class="tl-bullets">
+            <li>Gestión y control de documentación técnica en proyecto minero</li>
+            <li>Coordinación permanente con equipos internacionales en inglés</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-date">2016</span>
+        <div class="tl-content">
+          <strong>Técnica y Directora de Grabación</strong>
+          <span>Enboca Audiovisual · Madrid</span>
+          <ul class="tl-bullets">
+            <li>Dirección técnica de grabación de doblajes para proyectos audiovisuales de larga duración</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-date">2015</span>
+        <div class="tl-content">
+          <strong>Coordinadora Técnica de Grabación</strong>
+          <span>Estudio Multidesign · Madrid</span>
         </div>
       </div>
     </div>
@@ -233,17 +293,24 @@
     <p class="section-label">Formación</p>
     <div class="formation-list">
       <div class="formation-item">
+        <span class="f-year">2026</span>
+        <div>
+          <p class="f-name">ISTQB Foundation Level <span class="badge-istqb">en proceso</span></p>
+          <p class="f-where">Certificación internacional</p>
+        </div>
+      </div>
+      <div class="formation-item">
         <span class="f-year">En curso</span>
         <div>
           <p class="f-name">Ingeniería en Desarrollo de Software <span class="badge-current">activo</span></p>
-          <p class="f-where">Duoc UC — segundo año</p>
+          <p class="f-where">Duoc UC · Santiago — segundo año</p>
         </div>
       </div>
       <div class="formation-item">
         <span class="f-year">En curso</span>
         <div>
           <p class="f-name">Full Stack Java <span class="badge-current">activo</span></p>
-          <p class="f-where">Alkemy</p>
+          <p class="f-where">Alkemy · 2026</p>
         </div>
       </div>
       <div class="formation-item">
@@ -261,17 +328,37 @@
         </div>
       </div>
       <div class="formation-item">
-        <span class="f-year">2013 – 2016</span>
+        <span class="f-year">2014 – 2016</span>
         <div>
-          <p class="f-name">Audio Production · Audio Engineering</p>
-          <p class="f-where">SAE Institute, Madrid</p>
+          <p class="f-name">Audio Production Degree</p>
+          <p class="f-where">SAE Institute · Madrid</p>
+        </div>
+      </div>
+      <div class="formation-item">
+        <span class="f-year">2013 – 2014</span>
+        <div>
+          <p class="f-name">Audio Engineering</p>
+          <p class="f-where">SAE Institute · Madrid</p>
+        </div>
+      </div>
+      <div class="formation-item">
+        <span class="f-year">2008 – 2013</span>
+        <div>
+          <p class="f-name">Música y Sonido</p>
+          <p class="f-where">Universidad UNIACC · Santiago</p>
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>Carla Miranda Arellano · Santiago, Chile · <a href="mailto:carla.miranda.arellano@gmail.com">carla.miranda.arellano@gmail.com</a></p>
+    <p>
+      Carla Miranda Arellano · Santiago, Chile<br>
+      <a href="mailto:carla.miranda.arellano@gmail.com">carla.miranda.arellano@gmail.com</a> ·
+      <a href="tel:+56954239007">+56 9 5423 9007</a> ·
+      <a href="https://www.linkedin.com/in/carlamirandaarellano" target="_blank">LinkedIn</a> ·
+      <a href="https://github.com/CarlaMirandaArellano" target="_blank">GitHub</a>
+    </p>
   </footer>
 
 </div>
@@ -295,7 +382,6 @@
   const tfFail   = document.getElementById('tfFail');
   const tfTotal  = document.getElementById('tfTotal');
   const MAX_LINES = 6;
-
   let passed = 0, failed = 0, idx = 0;
 
   function addLine(html) {
@@ -313,9 +399,7 @@
       setTimeout(() => {
         termBody.innerHTML = '';
         passed = 0; failed = 0; idx = 0;
-        tfPass.textContent = '0';
-        tfFail.textContent = '0';
-        tfTotal.textContent = '0';
+        tfPass.textContent = '0'; tfFail.textContent = '0'; tfTotal.textContent = '0';
         addLine('<span class="t-info">$ mvn test -Dtest=SuiteTest</span>');
         setTimeout(runNext, 800);
       }, 3000);
@@ -325,9 +409,7 @@
     const icon = t.pass ? '<span class="t-pass">✓</span>' : '<span class="t-fail">✗</span>';
     addLine(`${icon} <span class="t-name">${t.name}</span><span class="t-time">${t.ms}ms</span>`);
     if (t.pass) passed++; else failed++;
-    tfPass.textContent  = passed;
-    tfFail.textContent  = failed;
-    tfTotal.textContent = idx;
+    tfPass.textContent = passed; tfFail.textContent = failed; tfTotal.textContent = idx;
     setTimeout(runNext, t.pass ? 350 + Math.random() * 250 : 900 + Math.random() * 300);
   }
 
