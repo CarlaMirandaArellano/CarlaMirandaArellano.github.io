@@ -363,7 +363,8 @@
       .hero { grid-template-columns: 1fr; padding: 100px 0 60px; gap: 2rem; }
       .hero-photo { order: -1; }
       .photo-frame { width: 140px; height: 140px; }
-      .terminal { width: 100%; }
+      .terminal { width: 100%; font-size: 0.55rem; }
+      .terminal-body { height: 100px; }
       .skill-row { grid-template-columns: 1fr auto; }
       .skill-desc { display: none; }
       .tl-item, .formation-item { grid-template-columns: 1fr; gap: 0.2rem; }
