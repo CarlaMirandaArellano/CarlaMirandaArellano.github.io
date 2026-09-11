@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portafolio de Carla Miranda Arellano. QA Automation: Playwright, Postman, Selenium, Cypress." />
+  <title>Carla Miranda Arellano — QA Automation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">Carla Miranda</span>
+  <ul class="nav-links">
+    <li><a href="#capacidades">Capacidades</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#stack">Stack</a></li>
+    <li><a href="#trayectoria">Trayectoria</a></li>
+    <li><a href="mailto:carla.miranda.arellano@gmail.com">Contacto</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-text">
+      <p class="hero-location">Santiago, Chile</p>
+      <h1>Carla Miranda<br><em>Arellano</em></h1>
+      <p class="hero-role">QA Automation · Ingeniería en Desarrollo de Software</p>
+      <p class="hero-bio">
+        Hago aseguramiento de calidad de software. Trabajé automatización de pruebas en Globant —Playwright sobre frontend, Postman sobre endpoints— y tengo formación específica en QA Automation. Estudio Ingeniería en Desarrollo de Software, así que leo el código que pruebo. Eso cambia el tipo de prueba que se me ocurre escribir.
+      </p>
+      <div class="hero-links">
+        <a href="mailto:carla.miranda.arellano@gmail.com" class="btn btn-primary">Escribeme</a>
+        <a href="https://github.com/CarlaMirandaArellano" class="btn btn-ghost" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/" class="btn btn-ghost" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="hero-photo">
+      <div class="photo-frame">
+        <img src="FotoGitPage.jpeg" alt="Carla Miranda Arellano" />
+      </div>
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="terminal-dot red"></span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
+          <span class="terminal-title">mvn test -Dtest=SuiteTest</span>
+        </div>
+        <div class="terminal-body" id="termBody"></div>
+        <div class="terminal-footer">
+          <div class="tf-stat"><span>passed</span><span class="tf-pass" id="tfPass">0</span></div>
+          <div class="tf-stat"><span>failed</span><span class="tf-fail" id="tfFail">0</span></div>
+          <div class="tf-stat"><span>total</span><span class="tf-total" id="tfTotal">0</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAPACIDADES -->
+  <section class="section" id="capacidades">
+    <p class="section-label">Capacidades verificadas</p>
+    <div class="skills-list">
+      <div class="skill-row">
+        <span class="skill-name">Playwright</span>
+        <span class="skill-desc">Automatización de pruebas de frontend</span>
+        <span class="skill-status verified">Verificado</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Postman</span>
+        <span class="skill-desc">Validación de endpoints de API</span>
+        <span class="skill-status verified">Verificado</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Selenium · Cypress</span>
+        <span class="skill-desc">Automatización, Gherkin y Cucumber</span>
+        <span class="skill-status verified">Verificado</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">PL/SQL · Oracle</span>
+        <span class="skill-desc">Integridad transaccional, commit y rollback</span>
+        <span class="skill-status verified">Verificado</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">SQL · PostgreSQL</span>
+        <span class="skill-desc">Consultas y validación de datos</span>
+        <span class="skill-status verified">Verificado</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Inglés C1</span>
+        <span class="skill-desc">Documentación técnica a diario</span>
+        <span class="skill-status verified">Verificado</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Java · Spring</span>
+        <span class="skill-desc">Programa Full Stack</span>
+        <span class="skill-status progress">En curso</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section class="section" id="proyectos">
+    <p class="section-label">Proyectos</p>
+    <div class="projects-list">
+      <div class="project-card">
+        <p class="project-meta">PL/SQL · Oracle · 2026</p>
+        <h3>Proceso batch con control de integridad</h3>
+        <p>Proceso masivo que recorre la base de clientes calculando puntajes según reglas de negocio, generando registros derivados en una tabla de detalle.</p>
+        <div class="project-insight">
+          El proceso solo confirma la transacción si el contador de iteraciones coincide con el total de registros esperado. Si no coinciden, hace rollback completo. Una tabla vacía es preferible a datos parciales que nadie cuestiona.
+        </div>
+        <div class="tags">
+          <span class="tag">PL/SQL</span>
+          <span class="tag">Oracle</span>
+          <span class="tag">Transacciones</span>
+          <span class="tag">Integridad de datos</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <p class="project-meta">.NET · Angular · SQL Server · Docker · 2025</p>
+        <h3>Librería — aplicación full-stack</h3>
+        <p>API REST que consume la API pública de Open Library y persiste favoritos en SQL Server sobre Docker, con frontend en Angular.</p>
+        <div class="project-insight">
+          Restricción de unicidad a nivel de base de datos, no solo por código. La validación en la aplicación se puede saltar; la de la base, no. Incluye pruebas unitarias sobre la capa de servicios.
+        </div>
+        <div class="tags">
+          <span class="tag">.NET</span>
+          <span class="tag">Angular</span>
+          <span class="tag">SQL Server</span>
+          <span class="tag">Docker</span>
+          <span class="tag">API REST</span>
+          <span class="tag">Tests unitarios</span>
+        </div>
+        <a href="https://github.com/CarlaMirandaArellano/Libreria-Project" class="project-link" target="_blank">Ver repositorio →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="section" id="stack">
+    <p class="section-label">Stack</p>
+    <div class="stack-grid">
+      <div class="stack-group">
+        <h4>Testing</h4>
+        <div class="stack-items">
+          <span class="stack-item">Playwright</span>
+          <span class="stack-item">Selenium</span>
+          <span class="stack-item">Cypress</span>
+          <span class="stack-item">Postman</span>
+          <span class="stack-item">WebDriver</span>
+          <span class="stack-item">Gherkin</span>
+          <span class="stack-item">Cucumber</span>
+          <span class="stack-item">TDD</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <h4>Lenguajes</h4>
+        <div class="stack-items">
+          <span class="stack-item">JavaScript</span>
+          <span class="stack-item">Java</span>
+          <span class="stack-item">SQL</span>
+          <span class="stack-item">PL/SQL</span>
+          <span class="stack-item">C#</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <h4>Bases de datos</h4>
+        <div class="stack-items">
+          <span class="stack-item">PostgreSQL</span>
+          <span class="stack-item">SQL Server</span>
+          <span class="stack-item">Oracle</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <h4>Desarrollo</h4>
+        <div class="stack-items">
+          <span class="stack-item">React</span>
+          <span class="stack-item">Angular</span>
+          <span class="stack-item">Node.js</span>
+          <span class="stack-item">Express</span>
+          <span class="stack-item">API REST</span>
+          <span class="stack-item">HTML · CSS</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <h4>Herramientas</h4>
+        <div class="stack-items">
+          <span class="stack-item">Git</span>
+          <span class="stack-item">GitHub</span>
+          <span class="stack-item">Docker</span>
+          <span class="stack-item">Jira</span>
+          <span class="stack-item">Trello</span>
+          <span class="stack-item">Ágil</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAYECTORIA -->
+  <section class="section" id="trayectoria">
+    <p class="section-label">Trayectoria</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <span class="tl-date">2025 · 3 meses</span>
+        <div class="tl-content">
+          <strong>QA Automation Engineer — pasantía</strong>
+          <span>Globant Chile</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-date">2021 – 2025</span>
+        <div class="tl-content">
+          <strong>Desarrolladora y gestora de e-commerce</strong>
+          <span>Enkarga Music</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-date">2017 – 2019</span>
+        <div class="tl-content">
+          <strong>Administradora de recursos de geología</strong>
+          <span>SAM — proyecto minero</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMACIÓN -->
+  <section class="section">
+    <p class="section-label">Formación</p>
+    <div class="formation-list">
+      <div class="formation-item">
+        <span class="f-year">En curso</span>
+        <div>
+          <p class="f-name">Ingeniería en Desarrollo de Software <span class="badge-current">activo</span></p>
+          <p class="f-where">Duoc UC — segundo año</p>
+        </div>
+      </div>
+      <div class="formation-item">
+        <span class="f-year">En curso</span>
+        <div>
+          <p class="f-name">Full Stack Java <span class="badge-current">activo</span></p>
+          <p class="f-where">Alkemy</p>
+        </div>
+      </div>
+      <div class="formation-item">
+        <span class="f-year">2025</span>
+        <div>
+          <p class="f-name">Testing QA Automation</p>
+          <p class="f-where">Desafío Latam</p>
+        </div>
+      </div>
+      <div class="formation-item">
+        <span class="f-year">2024 – 2025</span>
+        <div>
+          <p class="f-name">Full Stack Developer</p>
+          <p class="f-where">Desafío Latam</p>
+        </div>
+      </div>
+      <div class="formation-item">
+        <span class="f-year">2013 – 2016</span>
+        <div>
+          <p class="f-name">Audio Production · Audio Engineering</p>
+          <p class="f-where">SAE Institute, Madrid</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Carla Miranda Arellano · Santiago, Chile · <a href="mailto:carla.miranda.arellano@gmail.com">carla.miranda.arellano@gmail.com</a></p>
+  </footer>
+
+</div>
+
+<script>
+  const tests = [
+    { name: 'LoginTest › shouldDisplayLoginForm',         pass: true,  ms: 421  },
+    { name: 'LoginTest › shouldRejectInvalidCredentials', pass: true,  ms: 398  },
+    { name: 'LoginTest › shouldRedirectAfterLogin',       pass: false, ms: 1204 },
+    { name: 'NavigationTest › shouldHighlightActiveLink', pass: true,  ms: 187  },
+    { name: 'NavigationTest › shouldCollapseOnMobile',    pass: true,  ms: 243  },
+    { name: 'FormTest › shouldValidateRequiredFields',    pass: true,  ms: 312  },
+    { name: 'FormTest › shouldSubmitWithValidData',       pass: true,  ms: 489  },
+    { name: 'FormTest › shouldShowErrorOnInvalidEmail',   pass: false, ms: 876  },
+    { name: 'CheckoutTest › cartTotalsAreCorrect',        pass: true,  ms: 334  },
+    { name: 'CheckoutTest › paymentFormSubmits',          pass: true,  ms: 512  },
+  ];
+
+  const termBody = document.getElementById('termBody');
+  const tfPass   = document.getElementById('tfPass');
+  const tfFail   = document.getElementById('tfFail');
+  const tfTotal  = document.getElementById('tfTotal');
+  const MAX_LINES = 6;
+
+  let passed = 0, failed = 0, idx = 0;
+
+  function addLine(html) {
+    const el = document.createElement('div');
+    el.className = 't-line';
+    el.innerHTML = html;
+    termBody.appendChild(el);
+    requestAnimationFrame(() => el.classList.add('visible'));
+    const lines = termBody.querySelectorAll('.t-line');
+    if (lines.length > MAX_LINES) lines[0].remove();
+  }
+
+  function runNext() {
+    if (idx >= tests.length) {
+      setTimeout(() => {
+        termBody.innerHTML = '';
+        passed = 0; failed = 0; idx = 0;
+        tfPass.textContent = '0';
+        tfFail.textContent = '0';
+        tfTotal.textContent = '0';
+        addLine('<span class="t-info">$ mvn test -Dtest=SuiteTest</span>');
+        setTimeout(runNext, 800);
+      }, 3000);
+      return;
+    }
+    const t = tests[idx++];
+    const icon = t.pass ? '<span class="t-pass">✓</span>' : '<span class="t-fail">✗</span>';
+    addLine(`${icon} <span class="t-name">${t.name}</span><span class="t-time">${t.ms}ms</span>`);
+    if (t.pass) passed++; else failed++;
+    tfPass.textContent  = passed;
+    tfFail.textContent  = failed;
+    tfTotal.textContent = idx;
+    setTimeout(runNext, t.pass ? 350 + Math.random() * 250 : 900 + Math.random() * 300);
+  }
+
+  addLine('<span class="t-info">$ mvn test -Dtest=SuiteTest</span>');
+  setTimeout(runNext, 800);
+</script>
+
+</body>
+</html>
