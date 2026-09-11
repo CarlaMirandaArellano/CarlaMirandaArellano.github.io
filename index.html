@@ -186,6 +186,7 @@ transition: width 0.4s ease, height 0.4s ease, border-radius 0.4s ease;
   margin-left: 0;
   transform-origin: left center;
   filter: brightness(1.1) saturate(1.2) hue-rotate(10deg);
+  animation: parpadeo 1s ease-in-out infinite;
 }
 
     /* ── SECCIÓN ── */
@@ -401,6 +402,12 @@ transition: width 0.4s ease, height 0.4s ease, border-radius 0.4s ease;
     footer a:hover { text-decoration: underline; }
 
     /* ── RESPONSIVE ── */
+
+    @keyframes parpadeo {
+  0%, 100% { box-shadow: 0 0 0 4px var(--surface), 0 0 0 5px var(--border2), 0 0 15px rgba(91,192,222,0.2); }
+  50%       { box-shadow: 0 0 0 4px var(--surface), 0 0 0 5px var(--accent), 0 0 30px rgba(91,192,222,0.7); }
+}
+
     @media (max-width: 680px) {
       nav { padding: 0.85rem 1.25rem; }
       .nav-links { display: none; }
